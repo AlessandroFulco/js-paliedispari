@@ -18,7 +18,7 @@ console.log(userNum);
 
 const button = document.querySelector('button');
 button.addEventListener('click', function() {
-    
+
     //salviamo la scelta dell'utente
     const scelta = document.getElementById('pari-dispari').value;
     console.log(scelta);
@@ -31,10 +31,22 @@ button.addEventListener('click', function() {
     let somma = userNum + pcNum;
     console.log("la somma dei due numeri è: ", somma);
 
+    let determinaPari;
+    let determinaDispari;
+
+    function pariODispari(numero) {
+        numero = somma;
+        if(numero % 2 === 0) {
+            return determinaPari = "pari";
+        } else {
+            return determinaDispari = "dispari";
+        }
+    }
+    
     //salviamo Elemento DOM
     let showWinner = document.getElementById('vincitore');
 
-    if(somma % 2 === 0 && scelta == "pari" || somma % 2 && scelta == "dispari") {
+    if(pariODispari(somma) == determinaPari) {
         showWinner.innerHTML = "Congratulazioni hai vinto";
     } else {
         showWinner.innerHTML = "Hai perso, ritenta";
